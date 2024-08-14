@@ -1,19 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: meu-app
+  name: ms-fast-api-deployment
+  labels:
+    app: ms-fast-api
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: meu-app
+      app: ms-fast-api
   template:
     metadata:
       labels:
-        app: meu-app
+        app: ms-fast-api
     spec:
       containers:
-      - name: meu-app-container
-        image: lucatocampos/ms-fast-api:latest
+      - name: ms-fast-api-container
+        image: lucatocampos/ms-fast-api:latest # Substitua pelo nome da sua imagem no registro
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+        env:
+        - name: ENVIRONMENT_VARIABLE_NAME
+          value: "value" # Adicione suas variáveis de ambiente conforme necessário
