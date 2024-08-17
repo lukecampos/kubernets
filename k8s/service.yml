@@ -4,6 +4,10 @@ metadata:
   name: ms-fast-api-service
   namespace: ms  # Certifique-se de que este namespace existe
 spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   selector:
     app: ms-fast-api
   ports:
