@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ms-fast-api-service
+  namespace: ms  # Certifique-se de que este namespace existe
 spec:
   selector:
     app: ms-fast-api
